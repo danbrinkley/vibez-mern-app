@@ -32,7 +32,7 @@ class PostList extends Component {
 
                 
 <div>
-                    {posts.map(({ id, title }) => (
+                    {posts.map(({ id, title, body }) => (
                         <div>
                         <Button
                         className="remote-btn"
@@ -42,7 +42,8 @@ class PostList extends Component {
                             }));
                         }}
                     >&times;</Button>
-                    ,<p>{title}</p>
+                    ,<p>Title:{title}</p>
+                    <p>Body: {body}</p>
                     </div>
                     ))}
                 </div>
