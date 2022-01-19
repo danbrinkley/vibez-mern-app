@@ -3,18 +3,20 @@ import {Container, ListGroup, ListGroupItem, Button} from 'reactstrap'
 import { CSSTransition, TransitionGroup} from 'react-transition-group';
 import { faUserInjured } from '@fortawesome/free-solid-svg-icons';
 import './post.css'
+import { connect } from 'react-redux';
+import { getPosts } from '../../actions/postActions';
+import PropTypes from 'prop-types';
 
 class PostList extends Component {
-    state = {
-        posts: [
-            {id: '1234', title: 'New Post 1', body: 'Checkout this post'},
-            {id: "5678", title: 'New Post 2', body: 'Checkout this post'},
-            {id: '9879', title: 'New Post 3', body: 'Checkout this post'}
-        ]
-    }
+   
+     componentDidMount() {
+         this.props.getPosts();
+     }
+    
 
     render() {
-        const { posts } = this.state;
+       
+        const { posts } = this.props.post;
         return(
             <div className="posts-ctr">
                 <p>Test Posts</p>
@@ -51,5 +53,13 @@ class PostList extends Component {
         )
     }
 }
+PostList.propTypes = {
+    getPosts: PropTypes.func.isRequired, 
+    post: PropTypes.object.isRequired
+}
 
-export default PostList;
+const mapStateToProps = (state) => ({ 
+    post: state.post
+})
+
+export default connect(mapStateToProps, { getPosts }) (PostList);
