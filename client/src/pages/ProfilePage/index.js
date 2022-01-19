@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-// import Post from "../../Post";
+import PostList from "../../components/Posts/PostList";
 // import PostForm from "../../PostForm";
 // import * as PostService from "../../../api/PostService";
 // import { getUser } from "../../../api/UserService";
@@ -8,6 +8,7 @@ const ProfilePage = () => {
         return (
           <div className="">
             <h2>Profile</h2>
+            <PostList />
       
           </div>
         );
