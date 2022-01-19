@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const bodyParser = require('body-parser')
 
 
-const posts = require('./routes/api/posts');
+const routes = require('./routes');
 
 const app = express();
 
@@ -14,8 +14,13 @@ const app = express();
 app.use(bodyParser.json());
 
 
-//Use Routes
-app.use('/api/posts', posts);
+
+//Routes & Controllers
+
+// All of our routes will start with "/api", we're going to route them through index.js
+app.use("/api", routes);
+
+
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
