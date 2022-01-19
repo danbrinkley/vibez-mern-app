@@ -1,12 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import logo from "../images/logo.png";
-import pic1 from "../images/pic1.png";
+import logo from "../../images/logo.png";
+import pic1 from "../../images/pic1.png";
 import "./navbar.css";
 import { faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-class Navbar extends React.Component {
+class NavBar extends React.Component {
 
   constructor(props) {
     super(props);
@@ -41,4 +41,4 @@ class Navbar extends React.Component {
   }
 };
 
-export default Navbar;
+export default NavBar;
