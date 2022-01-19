@@ -1,0 +1,18 @@
+body {
+  background-color: black;
+}
+.search-ctr {
+  padding-left: 100px;
+}
+.search {
+  padding: 5px;
+  width: 70%;
+  border: none;
+  border-bottom: 1px solid #f8624fff;
+  background: transparent;
+  color: #f8624fff;
+}
+
+.mb-3 {
+  padding: 20px;
+}

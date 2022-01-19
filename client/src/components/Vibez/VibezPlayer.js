@@ -1,11 +1,11 @@
 import React from "react";
-import Navbar from "../Navbar";
-import Search from "./Search";
-import TableList from "./Table";
-import Welcome from "./Welcome";
-import YourPlaylist from "./Playlist/YourPlaylist";
-import PopularPlaylist from "./Playlist/PopularPlaylist";
-import Player from "./Player";
+import Navbar from "../NavBar";
+import Search from "../Search";
+import TableList from "../Table";
+import Welcome from "../Welcome";
+import YourPlaylist from "../Playlist/YourPlaylist";
+import PopularPlaylist from "../Playlist/PopularPlaylist";
+import Player from "../Player";
 // import PostForm from './Post/PostForm'
 // import PostHeader from './Post/PostHeader'
 // import Post from './Post/Post'
