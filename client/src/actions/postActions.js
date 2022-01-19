@@ -6,3 +6,9 @@ export const getPosts = () => {
         type: GET_POSTS
     };
 }
+export const deletePosts = (id) => {
+    return {
+        type: DELETE_POSTS,
+        payload: id
+    };
+}
