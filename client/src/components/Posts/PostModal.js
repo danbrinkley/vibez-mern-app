@@ -30,14 +30,15 @@ import {
 
     onChange = (e) => {
         this.setState({ [e.target.title]: e.target.value});
+        this.setState({ [e.target.body]: e.target.value});
     }
 
     onSubmit = (e) => {
         e.preventDefault();
 
         const newPost = {
-            id: uuidv4(),
-            title: this.state.title
+            title: this.state.title,
+            body: this.state.body
         }
         this.props.addPosts(newPost);
 

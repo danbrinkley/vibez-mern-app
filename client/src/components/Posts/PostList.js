@@ -20,28 +20,31 @@ class PostList extends Component {
        
         const { posts } = this.props.post;
         return(
-            <div className="posts-ctr">
-                
-                
+            <Container>
+                <ListGroup>
+                    <TransitionGroup className="post-list">
+                    {posts.map(({ _id, title, body }) => (
+                        <CSSTransition key={_id} timeout={500} classNames="fade">
+                            <ListGroupItem>
 
-                
-<div>
-                    {posts.map(({ id, title, body }) => (
-                        <div>
-                        <Button
-                        className="remote-btn"
-                        onClick={this.onDeleteClick.bind(this, id)}
-                        
-                    >&times;</Button>
-                    ,<p>Title:{title}</p>
-                    <p>Body: {body}</p>
-                    </div>
+                            <Button
+                            className="remote-btn"
+                            onClick={this.onDeleteClick.bind(this, _id)}
+                            
+                        >&times;</Button>
+                            ,<p>Title:{title}</p>
+                            <p>Body: {body}</p>
+                            </ListGroupItem>
+                        </CSSTransition>
                     ))}
-                </div>
-            </div>
+                    </TransitionGroup>
+                </ListGroup>
+            </Container>   
+            
         )
     }
-}
+};
+
 PostList.propTypes = {
     getPosts: PropTypes.func.isRequired, 
     post: PropTypes.object.isRequired

@@ -14,12 +14,11 @@ export default function(state = initialState, action) {
                ...state,
                posts: action.payload,
                loading: false
-
            };
            case DELETE_POSTS:
                return {
                    ...state,
-                   posts: state.posts.filter(post => post.id !== action.payload)
+                   posts: state.posts.filter(post => post._id !== action.payload)
                }
 
             case ADD_POSTS:
@@ -27,11 +26,12 @@ export default function(state = initialState, action) {
                     ...state,
                     posts: [action.payload, ...state.posts]
                 }
-            case POSTS_LOADING:
-                return {
+
+            case POSTS_LOADING: 
+                return{
                     ...state,
                     loading: true
-                }    
+                }
            default:
                return state;
     }
