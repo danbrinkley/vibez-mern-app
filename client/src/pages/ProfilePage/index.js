@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import PostList from "../../components/Posts/PostList";
+import PostModal from '../../components/Posts/PostModal'
 // import PostForm from "../../PostForm";
 // import * as PostService from "../../../api/PostService";
 // import { getUser } from "../../../api/UserService";
@@ -8,6 +9,7 @@ const ProfilePage = () => {
         return (
           <div className="">
             <h2>Profile</h2>
+            <PostModal />
             <PostList />
       
           </div>

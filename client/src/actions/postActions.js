@@ -12,3 +12,9 @@ export const deletePosts = (id) => {
         payload: id
     };
 }
+export const addPosts = (post) => {
+    return {
+        type: ADD_POSTS,
+        payload: post
+    };
+}
