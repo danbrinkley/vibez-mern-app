@@ -1,10 +1,15 @@
-import { GET_POSTS, ADD_POSTS, DELETE_POSTS } from './types';
+import { GET_POSTS, ADD_POSTS, DELETE_POSTS, POSTS_LOADING } from './types';
+import axios from 'axios'
 
-
-export const getPosts = () => {
-    return {
-        type: GET_POSTS
-    };
+export const getPosts = () => dispatch => {
+    dispatch(setPostLoading);
+    axios
+    .get('/api/posts')
+    .then(res => 
+        dispatch({
+            type: GET_POSTS,    
+            payload: res.data
+        }))
 }
 export const deletePosts = (id) => {
     return {
@@ -16,5 +21,10 @@ export const addPosts = (post) => {
     return {
         type: ADD_POSTS,
         payload: post
+    };
+}
+export const setPostLoading = () => {
+    return {
+        type: POSTS_LOADING,
     };
 }

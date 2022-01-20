@@ -1,12 +1,9 @@
-import { GET_POSTS, ADD_POSTS, DELETE_POSTS } from '../actions/types'
-import { v4 as uuidv4 } from 'uuid';
+import { GET_POSTS, ADD_POSTS, DELETE_POSTS, POSTS_LOADING } from '../actions/types'
+
 
 const initialState = {
-    posts: [
-        {id: uuidv4(), title: 'New Post 1', body: 'Checkout this post'},
-        {id: uuidv4(), title: 'New Post 2', body: 'Checkout this post'},
-        {id: uuidv4(), title: 'New Post 3', body: 'Checkout this post'}
-    ]
+    posts: [],
+    loading: false
 }
 
 
@@ -14,7 +11,10 @@ export default function(state = initialState, action) {
     switch(action.type) {
        case GET_POSTS:
            return {
-               ...state
+               ...state,
+               posts: action.payload,
+               loading: false
+
            };
            case DELETE_POSTS:
                return {
@@ -27,6 +27,11 @@ export default function(state = initialState, action) {
                     ...state,
                     posts: [action.payload, ...state.posts]
                 }
+            case POSTS_LOADING:
+                return {
+                    ...state,
+                    loading: true
+                }    
            default:
                return state;
     }
