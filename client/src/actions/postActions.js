@@ -1,5 +1,10 @@
 import axios from 'axios'
-import { GET_POSTS, ADD_POSTS, DELETE_POSTS, POSTS_LOADING } from './types';
+import { 
+    GET_POSTS, 
+    ADD_POSTS, 
+    DELETE_POSTS, 
+    POSTS_LOADING 
+} from './types';
 
 export const getPosts = () => dispatch => {
     dispatch(setPostsLoading());
