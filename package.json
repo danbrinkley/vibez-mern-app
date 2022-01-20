@@ -1,6 +1,9 @@
 {
   "name": "vibez-mern-stack",
   "version": "1.0.0",
+  "engines": {
+    "node": "16.10.0"
+  },
   "description": "Where spotify and social meet",
   "main": "server.js",
   "scripts": {
