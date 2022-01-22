@@ -5,10 +5,16 @@ const { User } = require("../models");
 const bcrypt = require("bcryptjs");
 
 const index = async (req, res) => {
-    const users = await db.User.find({});
-    console.log(users);
-    res.json(users);
+  User.findById(req.user.id)
+  .select('-password')
+  .then(user => res.json(user));
 }
+
+// const index = async (req, res) => {
+//     const users = await db.User.find({});
+//     console.log(users);
+//     res.json(users);
+// }
 
 const create = (req, res) => {
   const { name, email, password } = req.body;
