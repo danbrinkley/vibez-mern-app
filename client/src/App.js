@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Component } from "react";
 import AppRoutes from "./AppRoutes";
 import { 
   BrowserRouter as Router,
@@ -10,11 +10,17 @@ import HomePage from "./pages/HomePage";
 import ProfilePage from "./pages/ProfilePage";
 import { Provider } from "react-redux";
 import store from './store'
+import { loadUser } from './actions/authActions'
 
 
 
 
-function App() {
+
+class App extends Component {
+  componentDidMount() {
+    store.dispatch(loadUser())
+  }
+render() {
   return (
     <Provider store={store}>
       <Router>
@@ -32,6 +38,7 @@ function App() {
       </Router>
       </Provider>
   );
+  }
 }
 
 export default App;

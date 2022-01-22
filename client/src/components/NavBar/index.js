@@ -5,7 +5,7 @@ import pic1 from "../../images/pic1.png";
 import "./navbar.css";
 import { faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-
+import Register from '../Auth/Register'
 class NavBar extends React.Component {
 
   constructor(props) {
@@ -19,6 +19,7 @@ class NavBar extends React.Component {
   render() {
     return(
     <div className="nav-ctr">
+      <Register />
       <div className="user-ctr">
         <img className="user" src={pic1} alt="user picture and profile link" />
         <Link to ="/profile">
