@@ -1,11 +1,12 @@
 // Users Router
 const router = require("express").Router();
 const { users } = require("../controllers");
+const auth = require('../config/auth')
 
 router.post("/", users.create);
 
-// router.use(require("../config/auth"));
-router.get("/", users.index);
+
+router.get("/", auth, users.index);
 
 // function checkAuth(req, res, next) {
 //     if (req.user) return next();
