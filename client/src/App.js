@@ -1,18 +1,36 @@
 import React from "react";
-import Routes from "./routes";
-import { BrowserRouter } from "react-router-dom";
+import AppRoutes from "./AppRoutes";
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route, 
+    } from "react-router-dom";
 import "./App.css";
-import { Provider } from 'react-redux'
+import HomePage from "./pages/HomePage";
+import ProfilePage from "./pages/ProfilePage";
+import { Provider } from "react-redux";
 import store from './store'
+
+
 
 
 function App() {
   return (
     <Provider store={store}>
-      <BrowserRouter>
-        <Routes />
-      </BrowserRouter>
-    </Provider>
+      <Router>
+        <Routes>
+          
+        {/* <Route exact path="/register" render={(props) => <SignupPage {...props} />}/>
+      <Route exact path="/auth/login" render={(props) => <LoginPage {...props} />} /> */}
+        {/* <Route exact path="/profile" render={(props) => <ProfilePage {...props} />}/> 
+          <Route exact path="/home" render={(props) => <HomePage {...props} />} /> */}
+          <Route path="/home" element={<HomePage />} />
+          <Route path="/profile" element={<ProfilePage />} />
+
+        
+        </Routes>
+      </Router>
+      </Provider>
   );
 }
 

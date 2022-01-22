@@ -5,13 +5,15 @@ import { Router, Route } from "react-router";
 import HomePage from "../pages/HomePage";
 import ProfilePage from "../pages/ProfilePage";
 
-const Routes = () => (
+const appRoutes = () => (
   <Router>
+    
      {/* <Route exact path="/register" render={(props) => <SignupPage {...props} />}/>
       <Route exact path="/auth/login" render={(props) => <LoginPage {...props} />} /> */}
         <Route exact path="/profile" render={(props) => <ProfilePage {...props} />}/> 
           <Route exact path="/home" render={(props) => <HomePage {...props} />} />
+      
   </Router>
 );
 
-export default Routes;
+export default appRoutes;
