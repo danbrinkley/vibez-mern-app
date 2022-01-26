@@ -40,15 +40,15 @@ class NavBar extends React.Component {
       </div>
 
       <div className="logo-ctr">
-        <Logout />
         <img className="logo" src={logo} alt="website logo" />
       </div>
 
       <div className="logout-ctr">
-        <button className="logout-btn">LOGOUT</button>
+        <Logout />
+        {/* <button className="logout-btn">LOGOUT</button>
         <button className="mobile-nav-btn">
           <FontAwesomeIcon icon={faCaretSquareDown} color="white" />
-        </button>
+        </button> */}
       </div>
     </div>
     )
