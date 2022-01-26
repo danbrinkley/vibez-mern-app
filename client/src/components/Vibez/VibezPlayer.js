@@ -6,13 +6,9 @@ import Welcome from "../Welcome";
 import YourPlaylist from "../Playlist/YourPlaylist";
 import PopularPlaylist from "../Playlist/PopularPlaylist";
 import Player from "../Player";
-// import PostForm from './Post/PostForm'
-// import PostHeader from './Post/PostHeader'
-// import Post from './Post/Post'
-// import { getUser } from "../api/UserService";
-// import * as  PostService from '../api/PostService'
-// import Footer from './Footer/Footer';
 import "./vibez.css";
+import PostList from '../Posts/PostList'
+import PostModal from '../Posts/PostModal'
 // import Likes from '../Components/LikeButton/Like'
 
 const VibezPlayer = () => {
@@ -30,6 +26,11 @@ const VibezPlayer = () => {
           <PopularPlaylist />
           <YourPlaylist />
         </div>
+      </div>
+      <div className="post-ctr">
+        {/* <PostModal />
+        <PostList /> */}
+
       </div>
       <div className="player-ctr">
         <Player />

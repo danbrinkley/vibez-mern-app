@@ -30,7 +30,7 @@ render() {
       <Route exact path="/auth/login" render={(props) => <LoginPage {...props} />} /> */}
         {/* <Route exact path="/profile" render={(props) => <ProfilePage {...props} />}/> 
           <Route exact path="/home" render={(props) => <HomePage {...props} />} /> */}
-          <Route path="/home" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/profile" element={<ProfilePage />} />
 
         

@@ -6,7 +6,19 @@ import "./navbar.css";
 import { faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Register from '../Auth/Register'
+import Logout from '../Auth/Logout'
+ 
 class NavBar extends React.Component {
+
+  state = {
+    isOpen: false
+  }
+
+  toggle = () => {
+    this.setState({
+      
+    })
+  }
 
   constructor(props) {
     super(props);
@@ -28,6 +40,7 @@ class NavBar extends React.Component {
       </div>
 
       <div className="logo-ctr">
+        <Logout />
         <img className="logo" src={logo} alt="website logo" />
       </div>
 

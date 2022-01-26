@@ -52,6 +52,7 @@ export const loadUser = () => (dispatch, getState)  => {
          })
 }
 
+
 export const tokenConfig = getState => {
     const token = getState().auth.token;
 
@@ -67,4 +68,9 @@ export const tokenConfig = getState => {
     return config
 }
 
+export const logout = () => {
+    return {
+        type: LOGOUT_SUCCESS
+    }
+}
 

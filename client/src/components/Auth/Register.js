@@ -8,12 +8,14 @@ import {
     FormGroup,
     Label,
     Input,
-    NavLink
+    NavLink,
+    Alert
   }  from 'reactstrap';
 
   import { connect } from 'react-redux';
   import PropTypes from 'prop-types';
   import { register } from '../../actions/authActions'
+  import { clearErrors } from '../../actions/errorActions'
 
   class Register extends Component {
     state = { 
@@ -26,19 +28,48 @@ import {
     static propTypes = {
         isAuthenticated: PropTypes.bool,
         error: PropTypes.object.isRequired,
-        register: PropTypes.func.isRequired
+        register: PropTypes.func.isRequired,
+        clearErrors: PropTypes.func.isRequired
+    }
+
+    componentDidUpdate(prevProps) {
+        const { error, isAuthenticated } = this.props;
+        if(error !== prevProps.error) {
+            if(error.id === 'REGISTER FAIL') {
+                this.setState({ msg: error.msg.msg});
+            } else {
+                this.setState({ msg: null });
+            }
+        } if(this.state.modal) {
+            if(isAuthenticated) {
+                this.toggle();
+            } 
+        }
     }
 
     toggle = () => {
+        
+        this.props.clearErrors();
         this.setState({
             modal: !this.state.modal
         });
     }
+    onChange = e => {
+            this.setState({ [e.target.name]: e.targe.value })
+        }
 
     onSubmit = (e) => {
         e.preventDefault();
+        
+        const { name, email, password } = this.state;
 
-        this.toggle();
+        const newUser = {
+            name,
+            email,
+            password
+        }
+
+        this.props.register(newUser)
     }
 render() {
     return (
@@ -54,6 +85,7 @@ render() {
 
                 <ModalHeader toggle={this.toggle}>Register</ModalHeader>
                 <ModalBody>
+                    { this.state.msg ? ( <Alert color="danger"> { this.state.msg } </Alert>) : null}
                     <Form onSubmit={this.onSubmit}>
                         <FormGroup>
                             <Label for="name"><p>Name</p></Label>
@@ -99,5 +131,5 @@ render() {
 
     export default connect(
         mapStateToProps, 
-        {register}
-    )(Register);
+        { register, clearErrors }
+        )(Register);
