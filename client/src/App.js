@@ -1,39 +1,52 @@
-import React, { Component } from "react";
-import AppRoutes from "./AppRoutes";
-import { 
-  BrowserRouter as Router,
-  Routes,
-  Route, 
-    } from "react-router-dom";
+import React, { useEffect } from "react"
 import "./App.css";
-import HomePage from "./pages/HomePage";
-import ProfilePage from "./pages/ProfilePage";
+import Navbar from "../src/components/NavBar";
+import Search from "../src/components/Search";
+import TableList from "../src/components/Table";
+import Welcome from "../src/components/Welcome";
+import YourPlaylist from "../src/components/Playlist/YourPlaylist";
+import PopularPlaylist from "../src/components/Playlist/PopularPlaylist";
+import Player from "../Player";
+
 import { Provider } from "react-redux";
 import store from './store'
 import { loadUser } from './actions/authActions'
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 
 
 
-
-class App extends Component {
-  componentDidMount() {
-    store.dispatch(loadUser())
-  }
-render() {
+const App = () => {
+  useEffect(() => {
+    store.dispatch(loadUser());
+  }, []);
   return (
     <Provider store={store}>
-      <Router>
-        <Routes>
-          <Route path="/" element={<HomePage />} />
-          <Route path="/profile" element={<ProfilePage />} />
+    <div className="homepage-ctr">
+      <Navbar />
+      <div className="home-ctr">
+        <div className="right-ctr">
+          <Welcome />
+          <Search />
+          <TableList />
+        </div>
 
-        
-        </Routes>
-      </Router>
-      </Provider>
+        <div className="left-ctr">
+          <PopularPlaylist />
+          <YourPlaylist />
+        </div>
+      </div>
+      <div className="post-ctr">
+        {/* <PostModal />
+        <PostList /> */}
+
+      </div>
+      <div className="player-ctr">
+        <Player />
+      </div>
+    </div>
+    </Provider>
   );
-  }
-}
+};
 
 export default App;
