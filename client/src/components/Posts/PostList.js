@@ -8,7 +8,12 @@ import { getPosts, deletePosts } from '../../actions/postActions';
 import PropTypes from 'prop-types';
 
 class PostList extends Component {
-   
+    
+    static propTypes = {
+        getPosts: PropTypes.func.isRequired, 
+        post: PropTypes.object.isRequired,
+        isAuthenticated: PropTypes.bool
+    }
      componentDidMount() {
          this.props.getPosts();
      }
@@ -26,12 +31,12 @@ class PostList extends Component {
                     {posts.map(({ _id, title, body }) => (
                         <CSSTransition key={_id} timeout={500} classNames="fade">
                             <ListGroupItem>
-
-                            <Button
+                            { this.props.isAuthenticated ? <Button
                             className="remote-btn"
                             onClick={this.onDeleteClick.bind(this, _id)}
                             
-                        >&times;</Button>
+                        >&times;</Button> : null }
+                            
                             ,<p>Title:{title}</p>
                             <p>Body: {body}</p>
                             </ListGroupItem>
@@ -45,13 +50,10 @@ class PostList extends Component {
     }
 };
 
-PostList.propTypes = {
-    getPosts: PropTypes.func.isRequired, 
-    post: PropTypes.object.isRequired
-}
 
 const mapStateToProps = (state) => ({ 
-    post: state.post
+    post: state.post,
+    isAuthenticated: state.auth.isAuthenticated
 })
 
 export default connect(mapStateToProps, { getPosts, deletePosts }) (PostList);

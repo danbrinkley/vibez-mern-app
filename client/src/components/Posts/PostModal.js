@@ -22,6 +22,10 @@ import {
         body: '',
     }
 
+    static propTypes = {
+        isAutheticated: PropTypes.bool
+    }
+
     toggle = () => {
         this.setState({
             modal: !this.state.modal
@@ -49,9 +53,10 @@ import {
     render() {
         return(
             <div>
-                <Button
+                { this.props.isAutheticated ? <Button
                 onClick={this.toggle}
-                >Add Post</Button>
+                >Add Post</Button> : <h4 className="mb-3 ml-4"> Please login to enjoy Vibez</h4>}
+                
                 <Modal
                     isOpen={this.state.modal}
                     toggle={this.toggle}
@@ -81,12 +86,13 @@ import {
     }
   }
 
-  PostModal.propTypes = {
-    post: PropTypes.object.isRequired
-}
+//   PostModal.propTypes = {
+//     post: PropTypes.object.isRequired
+// }
 
 const mapStateToProps = state => ({
-    post: state.post
+    post: state.post,
+    isAutheticated: state.auth.isAutheticated
 })
 
 export default connect(mapStateToProps, { addPosts })(PostModal);
