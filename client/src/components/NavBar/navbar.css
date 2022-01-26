@@ -4,9 +4,9 @@
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding-right: 50px;
+  /* padding-right: 50px;
   padding-left: 50px;
-  height: 125px;
+  height: 125px; */
 }
 
 .logout-ctr {

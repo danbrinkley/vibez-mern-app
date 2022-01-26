@@ -1,17 +1,29 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, {Component, Fragment} from "react";
+import {
+  Navbar,
+  NavbarBrand,
+  NavbarToggler,
+  NavItem,
+  Container,
+  Collapse,
+  Nav
+} from 'reactstrap';
+import { connect } from 'react-redux';
+import PropTypes from 'prop-types'
 import logo from "../../images/logo.png";
-import pic1 from "../../images/pic1.png";
 import "./navbar.css";
-import { faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Register from '../Auth/Register'
 import Logout from '../Auth/Logout'
+import Login from '../Auth/Login'
  
 class NavBar extends React.Component {
 
   state = {
     isOpen: false
+  }
+
+  static propTypes = {
+    auth: PropTypes.object.isRequired
   }
 
   toggle = () => {
@@ -20,39 +32,55 @@ class NavBar extends React.Component {
     })
   }
 
-  constructor(props) {
-    super(props);
-
-    this.state = {
-      name: "",
-    }
-  }
   
   render() {
+
+    const { isAuthenticated, user } = this.props.auth;
+
+    const authLinks = (
+      <Fragment>
+            <NavItem>
+              <Logout />
+            </NavItem>
+
+      </Fragment>
+    )
+
+    const guestLinks = (
+      <Fragment>
+            <NavItem>
+              <Register />  
+            </NavItem>
+            <NavItem>
+              <Login />
+            </NavItem>
+
+      </Fragment>
+    )
     return(
     <div className="nav-ctr">
-      <Register />
-      <div className="user-ctr">
-        <img className="user" src={pic1} alt="user picture and profile link" />
-        <Link to ="/profile">
-        <p> {this.state.name} UserName</p>
-        </Link>
-      </div>
-
-      <div className="logo-ctr">
-        <img className="logo" src={logo} alt="website logo" />
-      </div>
-
-      <div className="logout-ctr">
-        <Logout />
-        {/* <button className="logout-btn">LOGOUT</button>
-        <button className="mobile-nav-btn">
-          <FontAwesomeIcon icon={faCaretSquareDown} color="white" />
-        </button> */}
-      </div>
-    </div>
+    <Navbar>
+      <Container>
+        <NavbarBrand href='/'>
+          <div className="logo-ctr">
+            <img className="logo" src={logo} alt="website logo" />
+          </div>
+        </NavbarBrand>
+        <NavbarToggler onClick={this.toggle} />
+        <Collapse isOpen={this.state.isOpen} navbar>
+          <Nav className='ml-auto' navbar>
+            { isAuthenticated ? authLinks: guestLinks }
+          </Nav>
+        </Collapse>
+      </Container>
+    </Navbar>
+  </div>
     )
   }
 };
 
-export default NavBar;
+const mapStateProps = state => ({
+  auth: state.auth
+})
+
+export default connect(mapStateProps, null) (NavBar);
