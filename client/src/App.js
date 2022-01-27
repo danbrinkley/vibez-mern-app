@@ -1,29 +1,30 @@
 import React, { useEffect } from "react"
 import "./App.css";
-import Navbar from "../src/components/NavBar";
-import Search from "../src/components/Search";
-import TableList from "../src/components/Table";
-import Welcome from "../src/components/Welcome";
-import YourPlaylist from "../src/components/Playlist/YourPlaylist";
-import PopularPlaylist from "../src/components/Playlist/PopularPlaylist";
-import Player from "../Player";
+import AppNavbar from "./components/AppNavBar";
+import Search from "./components/Search";
+import TableList from "./components/Table";
+import Welcome from "./components/Welcome";
+import YourPlaylist from "./components/Playlist/YourPlaylist";
+import PopularPlaylist from "./components/Playlist/PopularPlaylist";
+import Player from "./components/Player";
 
 import { Provider } from "react-redux";
 import store from './store'
-import { loadUser } from './actions/authActions'
-import 'bootstrap/dist/css/bootstrap.min.css'
+// import { loadUser } from './actions/authActions'
+// import 'bootstrap/dist/css/bootstrap.min.css'
+import { Container } from "reactstrap";
 
 
 
 
 const App = () => {
-  useEffect(() => {
-    store.dispatch(loadUser());
-  }, []);
+  // useEffect(() => {
+  //   store.dispatch(loadUser());
+  // }, []);
   return (
     <Provider store={store}>
     <div className="homepage-ctr">
-      <Navbar />
+      <AppNavbar />
       <div className="home-ctr">
         <div className="right-ctr">
           <Welcome />
@@ -45,6 +46,7 @@ const App = () => {
         <Player />
       </div>
     </div>
+   
     </Provider>
   );
 };

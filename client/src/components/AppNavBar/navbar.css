@@ -9,12 +9,10 @@
   height: 125px; */
 }
 
-.logout-ctr {
-  /* border: 1px solid white; */
-}
+
 
 .logo-ctr {
-  /* border: 1px solid white; */
+  border: 1px solid white;
 }
 .logo-ctr > img {
   height: 200px;

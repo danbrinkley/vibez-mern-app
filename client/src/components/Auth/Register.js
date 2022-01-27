@@ -55,7 +55,7 @@ import {
         });
     }
     onChange = e => {
-            this.setState({ [e.target.name]: e.targe.value })
+            this.setState({ [e.target.name]: e.target.value })
         }
 
     onSubmit = (e) => {
