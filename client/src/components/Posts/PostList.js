@@ -102,7 +102,7 @@ function PostList({ id, getPostsAgain, title, author, body, postComments, user }
     );
 }
 
-Post.propTypes = {
+PostList.propTypes = {
     id: string.isRequired,
     title: string.isRequired,
     author: string.isRequired,
@@ -111,7 +111,7 @@ Post.propTypes = {
     getPostsAgain: func,
 };
 
-Post.defaultProps = {
+PostList.defaultProps = {
     author: "Marianne Williamson",
 };
 
