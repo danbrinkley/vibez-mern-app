@@ -1,59 +1,118 @@
-import React, { Component } from 'react'
-import {Container, ListGroup, ListGroupItem, Button} from 'reactstrap'
-import { CSSTransition, TransitionGroup} from 'react-transition-group';
-import { faUserInjured } from '@fortawesome/free-solid-svg-icons';
+import React, { useState, useEffect } from 'react'
 import './post.css'
-import { connect } from 'react-redux';
-import { getPosts, deletePosts } from '../../actions/postActions';
-import PropTypes from 'prop-types';
+import { func, string, array } from "prop-types";
+import * as PostService from "../../api/PostService";
 
-class PostList extends Component {
-    
-    static propTypes = {
-        getPosts: PropTypes.func.isRequired, 
-        post: PropTypes.object.isRequired,
-        isAuthenticated: PropTypes.bool
-    }
-     componentDidMount() {
-         this.props.getPosts();
-     }
-    onDeleteClick = (id) => {
-        this.props.deletePosts(id)
-    }
+function PostList({ id, getPostsAgain, title, author, body, postComments, user }) {
+    const [isEditing, setIsEditing] = useState(false);
+    const [editedTitle, setTitle] = useState(title);
+    const [editedAuthor, setAuthor] = useState(author.lastName);
+    const [editedBody, setBody] = useState(body);
+    // const [comments, setComments] = useState([]);
 
-    render() {
-       
-        const { posts } = this.props.post;
-        return(
-            <Container>
-                <ListGroup>
-                    <TransitionGroup className="post-list">
-                    {posts.map(({ _id, title, body }) => (
-                        <CSSTransition key={_id} timeout={500} classNames="fade">
-                            <ListGroupItem>
-                            { this.props.isAuthenticated ? <Button
-                            className="remote-btn"
-                            onClick={this.onDeleteClick.bind(this, _id)}
-                            
-                        >&times;</Button> : null }
-                            
-                            ,<p>Title:{title}</p>
-                            <p>Body: {body}</p>
-                            </ListGroupItem>
-                        </CSSTransition>
-                    ))}
-                    </TransitionGroup>
-                </ListGroup>
-            </Container>   
-            
-        )
-    }
+    const handleEdit = async () => {
+        console.log("handleedit");
+        setIsEditing(!isEditing);
+        //meaning submit is showing
+        if (isEditing) {
+            let editedPost = {
+                title: editedTitle,
+                author: editedAuthor,
+                body: editedBody,
+            };
+            await PostService.update(id, editedPost);
+            getPostsAgain();
+        }
+    };
+
+    const handleDelete = async () => {
+        await PostService.remove(id);
+        getPostsAgain();
+    };
+
+    // async function fetchComments(id) {
+    //     let res = await PostService.getAllComments(id);
+    //     if (res.status === 200) {
+    //         setComments(res.data.data);
+    //     }
+    // }
+
+    useEffect(() => {
+        // fetchComments(id);
+    }, []);
+    return (
+        <div className="flex-post">
+            <div className="top-row">
+                {!isEditing && <h1>{title}</h1>}
+                {isEditing && (
+                    <input
+                        onChange={(e) => setTitle(e.target.value)}
+                        value={editedTitle}
+                        type="text"
+                        name="title"
+                        placeholder="TITLE"
+                    />
+                )}
+                <div>
+                    <button onClick={handleEdit}>
+                        {isEditing ? "SUBMIT" : "EDIT"}
+                    </button>
+                    <button onClick={handleDelete}>DELETE</button>
+                </div>
+            </div>
+            <p>by {author.lastName}</p>
+            <div>
+                {!isEditing && <p className="post-body">{body}</p>}
+                {isEditing && (
+                    <input
+                        onChange={(e) => setBody(e.target.value)}
+                        value={editedBody}
+                        type="text"
+                        name="body"
+                        placeholder="BODY GOES HERE"
+                    />
+                )}
+            </div>
+            {/* <div className="dopeness">
+                <Dopeness />
+            </div> */}
+            {/* <div>
+                <h3>Comments</h3>
+                {comments.map((comment) => {
+                    // console.log("WHICH DATA AM I USING: ", comment);
+                    return (
+                        <Comment
+                            author={comment.author}
+                            body={comment.body}
+                            key={comment._id}
+                            commentId={comment._id}
+                            id={id}
+                            getCommentsAgain={(id) => fetchComments(id)}
+                        />
+                    );
+                })}
+            </div>
+            <CommentForm
+                id={id}
+                user={user}
+                getPostsAgain={() => getPostsAgain()}
+                getCommentsAgain={(id) => fetchComments(id)}
+            /> */}
+        </div>
+    );
+}
+
+Post.propTypes = {
+    id: string.isRequired,
+    title: string.isRequired,
+    author: string.isRequired,
+    body: string.isRequired,
+    postComments: array,
+    getPostsAgain: func,
 };
 
+Post.defaultProps = {
+    author: "Marianne Williamson",
+};
 
-const mapStateToProps = (state) => ({ 
-    post: state.post,
-    isAuthenticated: state.auth.isAuthenticated
-})
-
-export default connect(mapStateToProps, { getPosts, deletePosts }) (PostList);
+export default PostList;
