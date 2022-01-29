@@ -1,0 +1,49 @@
+p {
+  color: #ceeff3ff;
+  padding: 12px;
+  text-align: center;
+}
+.login-ctr {
+  height: 1000px;
+  width: 100%;
+  background-image: url('../../images/login-background.png');
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 5%;
+  background-position: center center;
+}
+.login-form-ctr {
+  display: flex;
+  flex-direction: column;
+}
+
+.input-fields {
+  width: 350px;
+  display: flex;
+  padding: 14px;
+  font-size: 16px;
+  background-color: rgba(0, 0, 0, 0);
+  color: white;
+  border: 1px solid #f8624fff;
+}
+
+button {
+  width: 100%;
+  padding: 15px;
+  font-size: 20px;
+  background-color: #f8624fff;
+  color: #ceeff3ff;
+}
+.logo {
+  width: 400px;
+  height: 300px;
+}
+.login-btn {
+  margin-top: 30px;
+  width: 350px;
+}
+.join-link {
+  color: #f5cc00ff;
+  text-decoration: none;
+}

@@ -1,17 +1,17 @@
 import React, { useEffect, useState } from "react"
 import "./homepage.css";
-import logo from "./images/logo.png";
-import NavBar from "./components/NavBar";
-import Search from "./components/Search";
-import TableList from "./components/Table";
-import Welcome from "./components/Welcome";
-import YourPlaylist from "./components/Playlist/YourPlaylist";
-import PopularPlaylist from "./components/Playlist/PopularPlaylist";
-import Player from "./components/Player";
-import PostList from "./components/Posts/PostList";
-import PostForm from "./components/Posts/PostForm";
-import * as PostService from "./api/PostService";
-import { getUser } from "./api/UserService";
+import logo from "../images/logo.png";
+import NavBar from "./Nav";
+import Search from "./Search";
+import TableList from "./Table";
+import Welcome from "./Welcome";
+import YourPlaylist from "./Playlist/YourPlaylist";
+import PopularPlaylist from "./Playlist/PopularPlaylist";
+import Player from "./Player";
+import PostList from "./Posts/PostList";
+import PostForm from "./Posts/PostForm";
+import * as PostService from "../api/PostService";
+import { getUser } from "../api/UserService";
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -19,7 +19,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
-const App = () => {
+const VibezApp = () => {
   // const [posts, setPosts] = useState([]);
   // const [user] = useState(getUser);
 
@@ -79,4 +79,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default VibezApp;

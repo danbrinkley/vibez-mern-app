@@ -1,4 +1,5 @@
 import VibezActions from "../api/VibezActions";
+const atob = require('atob');
 
 function setToken(token) {
     console.log("SETTING TOKEN: ", token);
