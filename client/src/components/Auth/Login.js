@@ -1,62 +1,8 @@
-import React, {Component} from 'react'
-import { render } from 'react-dom';
-// import Hello from './Hello';
-import LoginForm from './LoginForm.js';
-import SignUpForm from './SignUpForm';
 
-import {
-  Navbar,
-  NavDropdown,
-  MenuItem,
-  NavItem,
-  Nav,
-  Popover,
-  Tooltip,
-  Button,
-  Modal,
-  OverlayTrigger
-} from 'react-bootstrap';
+  
+import React from "react";
+import LoginForm from "./LoginForm";
 
-const styles = {
-  fontFamily: 'sans-serif',
-  textAlign: 'center',
-};
+const Login = () => <LoginForm />;
 
-
-class Login extends Component {
-  constructor(){
-    super();
-    this.state = {
-      showModal : false,
-      form : ''
-    }
-  }
-
-  close = () => {
-    this.setState ({ showModal: false });
-  }
-
-
-
-  open = () => {
-    this.setState ({ showModal : true});
-  }
-
-
-  render(){
-    const isLoggedIn = this.state.isLoggedIn;
-
-    return (
-      <div style={styles}>
-        <Button type="button" className="btn btn-default" onClick={this.open}>
-          Login
-        </Button>
-        <LoginForm showModal={this.state.showModal} onClose = {this.close} />
-     </div>
-    );
-  }
-}
-
-
-
-    export default Login;
+export default Login;
