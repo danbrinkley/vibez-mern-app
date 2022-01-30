@@ -38,7 +38,7 @@ const LoginForm = () => {
                 value={email}
                 title="email"
                 placeholder="Email"
-                className=".input-fields"
+                className="input-fields"
             />
             <input
                 type="password"
@@ -46,7 +46,7 @@ const LoginForm = () => {
                 value={password}
                 title="password"
                 placeholder="Password"
-                className=".input-fields"
+                className="input-fields"
             />
             <button className="login-btn" onClick={handleSubmit}>
               LOGIN

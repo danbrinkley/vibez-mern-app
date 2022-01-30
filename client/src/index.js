@@ -1,12 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import { BrowserRouter as Router } from 'react-router-dom'
+import store from './store'
 import Nav from './components/Nav';
 
 ReactDOM.render(
-<Router>
-<Nav />
-</Router>,
+<Provider store={store}>
+    <Router>
+        <Nav />
+    </Router>
+</Provider>,
 
  document.getElementById('root'));
 
