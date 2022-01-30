@@ -1,13 +1,22 @@
 import { combineReducers } from "redux";
-import postReducer from './postReducer';
-import authReducer from './authReducer';
-import errorReducer from './errorReducer';
-
-
-
+import userReducer from './userReducer';
+import tokenReducer from './tokenReducer';
+import playlistReducer from './playlistReducer';
+import songsReducer from './songsReducer';
+import albumsReducer from './albumsReducer';
+import artistsReducer from './artistsReducer';
+import uiReducer from './uiReducer';
+import browseReducer from './browseReducer';
+import soundReducer from './soundReducer';
 
 export default combineReducers({
-    post: postReducer, 
-    error: errorReducer,
-    auth: authReducer
+  userReducer,
+  tokenReducer,
+  playlistReducer,
+  songsReducer,
+  albumsReducer,
+  artistsReducer,
+  uiReducer,
+  browseReducer,
+  soundReducer
 });
