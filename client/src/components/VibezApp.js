@@ -1,13 +1,15 @@
 import React, { Component } from "react"
 import "./homepage.css";
 import logo from "../images/logo.png";
-import NavBar from "./Nav";
+import Nav from "./Nav";
 import Search from "./Search";
 import TableList from "./Table";
 import Welcome from "./Welcome";
 import YourPlaylist from "./Playlist/YourPlaylist";
 import PopularPlaylist from "./Playlist/PopularPlaylist";
 import Player from "./Player";
+import UserPlaylists from "../components/UserPlaylists"
+import UserDetails from "./Nav/UserDetails"
 // import PostList from "./Posts/PostList";
 // import PostForm from "./Posts/PostForm";
 // import * as PostService from "../api/PostService";
@@ -102,7 +104,7 @@ render() {
   return (
     
     <div className="homepage-ctr">
-        <NavBar />
+        <Nav />
       <div className="home-ctr">
         <div className="right-ctr">
           <Welcome />
@@ -112,7 +114,8 @@ render() {
 
         <div className="left-ctr">
           <PopularPlaylist />
-          <YourPlaylist />
+          <UserPlaylists />
+          {/* <YourPlaylist /> */}
         </div>
       </div>
       <div className="post-ctr">

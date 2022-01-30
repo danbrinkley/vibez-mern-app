@@ -1,44 +1,37 @@
 import React from "react";
-import { Route, Routes } from 'react-router-dom'
+import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
+import pic1 from "../../images/pic1.png";
 import "./navbar.css";
-import VibezApp from "../VibezApp";
-import Login from "../Auth/Login";
-import Signup from "../Auth/Signup";
- 
-const Nav = (props) => {
-    return(
-    // <div className="nav-ctr">
-    //     <div className="logo-ctr">
-    //       <img className="logo" src={logo} alt="website logo" />
-    //     </div> 
-      
-        <Routes>
-          <Route
-            path='/home/*'
-            element={<VibezApp />}
-            />
-          {/* <Route
-            path='*'
-            element={<Navigate to='/' />}
-            /> */}
-          <Route
-            path='/login'
-            element={<Login />}
-            />
-          <Route
-            path='/signup'
-            element={<Signup />}
-            />
+import UserDetails from './UserDetails'
+import { faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
-          
-        </Routes>
-      
+class Nav extends React.Component {
 
-      // </div> 
+  constructor() {
+    super();
+
+    this.state = {
+      name: "",
+    }
+  }
   
+  render() {
+    return(
+    <div className="nav-ctr">
+      <UserDetails />
+
+      <div className="logo-ctr">
+        <img className="logo" src={logo} alt="website logo" />
+      </div>
+
+      <div className="logout-ctr">
+        <button className="logout-btn">LOGOUT</button>
+      </div>
+    </div>
     )
   }
-
+};
 
 export default Nav;

@@ -1,26 +1,32 @@
+h4 {
+  color: white;
+}
+
 .nav-ctr {
   background-color: black;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  /* padding-right: 50px;
+  padding-right: 50px;
   padding-left: 50px;
-  height: 125px; */
+  height: 125px;
 }
 
 
 
 .logo-ctr {
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 .logo-ctr > img {
   height: 200px;
   width: 300px;
 }
 .logout-btn {
+  color: white;
   background-color: transparent;
   border-color: #f8624fff;
+  padding: 10px;
 }
 
 .logout-btn:hover {
@@ -29,8 +35,12 @@
 }
 .user-ctr {
   display: flex;
+  flex-direction: row;
+  border: 1px solid white;
 }
-.user-ctr > img {
-  width: 50px;
-  border-radius: 50%;
+.user-image {
+  width: 100px;
+  height: 100px;
+  border: 1px solid white;
 }
+
