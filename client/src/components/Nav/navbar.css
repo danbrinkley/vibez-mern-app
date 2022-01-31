@@ -1,9 +1,10 @@
-h4 {
+h3 {
   color: white;
+  padding-left: 10px;
 }
 
 .nav-ctr {
-  background-color: black;
+  /* background-color: black; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -21,6 +22,7 @@ h4 {
 .logo-ctr > img {
   height: 200px;
   width: 300px;
+  
 }
 .logout-btn {
   color: white;
@@ -36,11 +38,13 @@ h4 {
 .user-ctr {
   display: flex;
   flex-direction: row;
-  border: 1px solid white;
+  align-items: center;
+  
 }
 .user-image {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
   border: 1px solid white;
 }
 

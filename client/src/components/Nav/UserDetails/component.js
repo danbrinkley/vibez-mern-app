@@ -5,7 +5,7 @@ import "../navbar.css";
 const UserDetails = ({ userImage, displayName }) => (
   <div className="user-ctr">
     <img alt="user" className="user-image" src={userImage} />
-    <h4 className="user-name">{displayName}</h4>
+    <h3 className="user-name">{displayName}</h3>
   </div>
 );
 

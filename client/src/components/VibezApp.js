@@ -9,7 +9,8 @@ import YourPlaylist from "./Playlist/YourPlaylist";
 import PopularPlaylist from "./Playlist/PopularPlaylist";
 import Player from "./Player";
 import UserPlaylists from "../components/UserPlaylists"
-import UserDetails from "./Nav/UserDetails"
+import MainView from '../components/MainView'
+import PerfectScrollbar from 'react-perfect-scrollbar'
 // import PostList from "./Posts/PostList";
 // import PostForm from "./Posts/PostForm";
 // import * as PostService from "../api/PostService";
@@ -109,7 +110,12 @@ render() {
         <div className="right-ctr">
           <Welcome />
           <Search />
-          <TableList />
+     <PerfectScrollbar>
+     
+    
+        <MainView />
+        </PerfectScrollbar>
+          {/* <TableList /> */}
         </div>
 
         <div className="left-ctr">
