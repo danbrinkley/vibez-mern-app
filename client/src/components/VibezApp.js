@@ -10,6 +10,10 @@ import PopularPlaylist from "./Playlist/PopularPlaylist";
 import Player from "./Player";
 import UserPlaylists from "../components/UserPlaylists"
 import MainView from '../components/MainView'
+import MainHeader from '../components/MainHeader'
+import Artwork from '../components/ArtWork'
+import SideMenu from '../components/SideMenu'
+import Header from '../components/Header'
 import PerfectScrollbar from 'react-perfect-scrollbar'
 // import PostList from "./Posts/PostList";
 // import PostForm from "./Posts/PostForm";
@@ -107,29 +111,43 @@ render() {
     <div className="homepage-ctr">
         <Nav />
       <div className="home-ctr">
-        <div className="right-ctr">
-          <Welcome />
-          <Search />
-     <PerfectScrollbar>
+        
+        <div className="left-ctr">
+          <SideMenu />
+          <UserPlaylists />
+          </div>
+
+        <div className="mid-ctr">
+          {/* <Header /> */}
      
-    
-        <MainView />
-        </PerfectScrollbar>
+     <MainHeader
+          pauseSong={this.pauseSong}
+          resumeSong={this.resumeSong}
+        />{' '}
+      <MainView
+        pauseSong={this.pauseSong}
+        resumeSong={this.resumeSong}
+        audioControl={this.audioControl}
+        />
+        
           {/* <TableList /> */}
         </div>
-
-        <div className="left-ctr">
-          <PopularPlaylist />
-          <UserPlaylists />
-          {/* <YourPlaylist /> */}
+        <div className="right-ctr">
+          Crud Container
         </div>
       </div>
       <div className="post-ctr">
+          <Artwork />
     
 
       </div>
       <div className="player-ctr">
-        <Player />
+        <Player
+          stopSong={this.stopSong}
+          pauseSong={this.pauseSong}
+          resumeSong={this.resumeSong}
+          audioControl={this.audioControl}        
+        />
       </div>
     </div>
    
