@@ -5,10 +5,12 @@
 }
 
 .user-library-header {
-  font-weight: 300;
+  font-weight: 400;
   text-transform: uppercase;
-  font-family: 'Proxima Thin', Georgia, sans-serif;
-  font-size: 13px;
+  font-family: 'Bevan', cursive;
+font-family: 'Righteous', cursive;
+font-family: 'Space Mono', monospace;   
+  font-size: 16px;
   margin: 0;
   padding: 0 0 5px 0;
   letter-spacing: 1px;

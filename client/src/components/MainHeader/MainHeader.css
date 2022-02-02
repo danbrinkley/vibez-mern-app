@@ -55,6 +55,9 @@
 .header-title {
   font-size: 36px;
   padding: 3px 0 5px 0;
+  font-family: 'Bevan', cursive;
+  font-family: 'Righteous', cursive;
+  font-family: 'Space Mono', monospace;
 }
 
 .browse-headers .active {

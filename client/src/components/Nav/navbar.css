@@ -1,6 +1,9 @@
 h3 {
   color: white;
   padding-left: 10px;
+  font-family: 'Bevan', cursive;
+  font-family: 'Righteous', cursive;
+  font-family: 'Space Mono', monospace;   
 }
 
 .nav-ctr {
@@ -31,7 +34,10 @@ h3 {
   color: white;
   background-color: transparent;
   padding: 10px;
-
+  font-family: 'Bevan', cursive;
+  font-family: 'Righteous', cursive;
+  font-family: 'Space Mono', monospace;   
+  font-size: 16px;
 }
 
 .logout-btn:hover {
