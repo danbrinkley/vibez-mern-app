@@ -30,8 +30,8 @@ h3 {
 .logout-btn {
   color: white;
   background-color: transparent;
-  border-color: #f8624fff;
   padding: 10px;
+
 }
 
 .logout-btn:hover {

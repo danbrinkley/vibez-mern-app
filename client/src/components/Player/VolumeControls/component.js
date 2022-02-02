@@ -21,7 +21,8 @@ class VolumeControls extends Component {
   render() {
     return (
       <div className="volume-container">
-        <i className="fa fa-volume-up" aria-hidden="true" />
+        <i className="fa fa-volume-up" aria-hidden="true" 
+        />
         <input
           className="volume"
           type="range"

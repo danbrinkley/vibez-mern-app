@@ -3,7 +3,7 @@
 }
 
 .browse-headers p {
-  color: rgb(179, 179, 179);
+  color: #F5CC00;
   font-size: 14px;
   text-transform: uppercase;
   font-family: 'Proxima Thin', Georgia, sans-serif;
@@ -53,7 +53,7 @@
 }
 
 .header-title {
-  font-size: 48px;
+  font-size: 36px;
   padding: 3px 0 5px 0;
 }
 
@@ -67,7 +67,7 @@
   width: 35px;
   left: 50%;
   top: 22px;
-  border-bottom: 2px solid #1db954;
+  border-bottom: 2px solid #F5CC00;
   transform: translate(-50%, -50%);
 }
 
@@ -97,4 +97,15 @@
 .artist-button {
 	margin-top: 20px;
 	margin-left: 40px;
+}
+
+.main-pause-play-btn {
+  color: white;
+  background-color: transparent;
+  border: 1px solid #f8624fff;
+  padding: 10px;
+}
+.main-pause-play-btn:hover {
+  background-color: #f8624fff;
+  border-color: white;
 }

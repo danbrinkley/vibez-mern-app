@@ -1,3 +1,5 @@
+
+
 .song-details {
   position: absolute;
   left: 20px;
@@ -26,7 +28,7 @@
 .reverse,
 .play-btn {
   padding: 0 5px;
-  color: rgb(179, 179, 179);
+  color: #f5cc00ff;
   cursor: pointer;
 }
 
@@ -61,7 +63,7 @@
 .song-progress {
   width: 500px;
   height: 4px;
-  background: rgb(64, 64, 64);;
+  background: #ceeff3ff;
   border-radius: 4px;
 }
 
@@ -69,7 +71,7 @@
   margin: 0;
   width: 100px;
   height: 4px;
-  background: #1db954;
+  background: #f8624fff;
   border-radius: 4px;
 }
 
@@ -78,6 +80,7 @@
   position: relative;
   top: -5px;
   left: -10px;
+  color: #ceeff3ff;
 }
 
 .timer-end {
@@ -85,4 +88,5 @@
   position: relative;
   top: -5px;
   left: 10px;
+  color: #ceeff3ff;
 }
