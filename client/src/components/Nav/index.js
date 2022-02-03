@@ -1,11 +1,7 @@
 import React, {Component} from "react";
-import { Link } from "react-router-dom";
 import logo from "../../images/logo.png";
-import pic1 from "../../images/pic1.png";
 import "./navbar.css";
 import UserDetails from './UserDetails'
-import { faCaretSquareDown } from "@fortawesome/free-solid-svg-icons";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { logout } from '../../api/UserService'
 import { Navigate } from 'react-router-dom';
 

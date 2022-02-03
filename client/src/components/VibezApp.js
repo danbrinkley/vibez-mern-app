@@ -1,20 +1,13 @@
 import React, { Component } from "react"
 import "./homepage.css";
-import logo from "../images/logo.png";
 import Nav from "./Nav";
-import Search from "./Search";
-import TableList from "./Table";
-import Welcome from "./Welcome";
-import YourPlaylist from "./Playlist/YourPlaylist";
-import PopularPlaylist from "./Playlist/PopularPlaylist";
 import Player from "./Player";
 import UserPlaylists from "../components/UserPlaylists"
 import MainView from '../components/MainView'
 import MainHeader from '../components/MainHeader'
 import Artwork from '../components/ArtWork'
 import SideMenu from '../components/SideMenu'
-import Header from '../components/Header'
-import PerfectScrollbar from 'react-perfect-scrollbar'
+// import Header from '../components/Header'
 // import PostList from "./Posts/PostList";
 // import PostForm from "./Posts/PostForm";
 // import * as PostService from "../api/PostService";

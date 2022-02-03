@@ -23,7 +23,7 @@ const ArtistList = ({
           className="artist-item"
           key={i}
         >
-          <a>
+          <a href="">
             <div>
               <div className="artist-image">
                 <img alt="artist" src={artist.images[0] ? artist.images[0].url : ""} />

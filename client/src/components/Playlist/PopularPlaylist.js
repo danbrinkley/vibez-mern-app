@@ -1,9 +1,7 @@
 import React from "react";
 import PlaylistItems from "./PlaylistItems";
 import "./playlist.css";
-import pic3 from "../../images/pic3.png";
 import pic4 from "../../images/pic4.png";
-import pic5 from "../../images/pic5.png";
 
 const PopularPlaylist = () => {
   return (
