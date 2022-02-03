@@ -15,4 +15,7 @@ function getUser() {
     return user;
 }
 
-export { create, login, getUser };
+const logout = () => {
+    localStorage.removeItem("token");
+  }
+export { create, login, getUser, logout };
