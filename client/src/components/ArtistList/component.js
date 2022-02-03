@@ -23,7 +23,7 @@ const ArtistList = ({
           className="artist-item"
           key={i}
         >
-          <a href="">
+          <button>
             <div>
               <div className="artist-image">
                 <img alt="artist" src={artist.images[0] ? artist.images[0].url : ""} />
@@ -32,7 +32,7 @@ const ArtistList = ({
                 <p>{artist.name}</p>
               </div>
             </div>
-          </a>
+          </button>
         </li>
       );
     });
