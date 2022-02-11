@@ -1,17 +1,14 @@
 import React, { Component } from "react"
 import "./homepage.css";
-import Nav from "./Nav";
+import NavBar from "./Nav/NavBar";
 import Player from "./Player";
 import UserPlaylists from "../components/UserPlaylists"
 import MainView from '../components/MainView'
 import MainHeader from '../components/MainHeader'
 import Artwork from '../components/ArtWork'
 import SideMenu from '../components/SideMenu'
-// import Header from '../components/Header'
-// import PostList from "./Posts/PostList";
-// import PostForm from "./Posts/PostForm";
-// import * as PostService from "../api/PostService";
-// import { getUser } from "../api/UserService";
+import Posts from '../components/Posts'
+
 
 import PropTypes from 'prop-types';
 import { bindActionCreators } from 'redux';
@@ -30,6 +27,41 @@ import {
 
 
 
+
+
+// export const authEndpoint = 'https://accounts.spotify.com/authorize';
+
+// const clientId = "9a2df62a8b5e4fe1aedb898f2717a401";
+// const redirectUri = "http://localhost:3000";
+// const scopes = [
+//   "user-read-currently-playing",
+//   "user-read-playback-state",
+//   "playlist-read-private",
+//   "playlist-read-collaborative",
+//   "playlist-modify-public",
+//   "user-read-recently-played",
+//   "playlist-modify-private",
+//   "ugc-image-upload",
+//   "user-follow-modify",
+//   "user-follow-read",
+//   "user-library-read",
+//   "user-library-modify",
+//   "user-read-private",
+//   "user-read-email",
+//   "user-top-read"
+// ];
+// // Get the hash of the url
+// const hash = window.location.hash
+// .substring(1)
+// .split("&")
+// .reduce(function(initial, item) {
+//   if (item) {
+//     var parts = item.split("=");
+//     initial[parts[0]] = decodeURIComponent(parts[1]);
+//   }
+//   return initial;
+// }, {});
+// window.location.hash = "";
 
 class VibezApp extends Component { 
   static audio;
@@ -98,11 +130,11 @@ class VibezApp extends Component {
     }
   };
 
+   
 render() {  
   return (
-    
     <div className="homepage-ctr">
-        <Nav />
+        <NavBar />
       <div className="home-ctr">
         
         <div className="left-ctr">
@@ -126,7 +158,7 @@ render() {
           {/* <TableList /> */}
         </div>
         <div className="right-ctr">
-          Crud Container
+          <Posts />
         </div>
       </div>
       <div className="post-ctr">

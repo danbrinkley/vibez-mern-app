@@ -1,17 +1,5 @@
-import React, { useState } from 'react';
-import {
-    Button,
-    Modal, 
-    ModalHeader,
-    ModalBody,
-    Form,
-    FormGroup,
-    Label,
-    Input,
-  }  from 'reactstrap';
-
-import { connect } from 'react-redux';
-import { addPosts } from '../../actions/postActions'
+import React, { useState } from "react";
+// import "./styles.css";
 import { func } from "prop-types";
 import * as PostService from "../../api/PostService";
 
@@ -35,52 +23,32 @@ const PostForm = ({ getPostsAgain, user }) => {
     if (!user) {
         return <div />;
     }
+    return (
+        <div className="PostForm-inputs">
+            <input
+                onChange={(e) => setTitle(e.target.value)}
+                value={title}
+                type="text"
+                name="title"
+                placeholder="TITLE"
+            />
+            <p>
+                {user.firstName} {user.lastName}
+            </p>
+            <input
+                onChange={(e) => setBody(e.target.value)}
+                value={body}
+                type="text"
+                name="body"
+                placeholder="BODY GOES HERE"
+            />
+            <button onClick={handleSubmit}>Add Post +</button>
+        </div>
+    );
+};
 
-
-   
-return(
-        <div>
-                { this.props.isAutheticated ? <Button
-                onClick={this.toggle}
-                >Add Post</Button> : <h4 className="mb-3 ml-4"> Please login to enjoy Vibez</h4>}
-                
-                <Modal
-                    isOpen={this.state.modal}
-                    toggle={this.toggle}
-                >
-
-                <ModalHeader toggle={this.toggle}>Add to Post</ModalHeader>
-                <ModalBody>
-                    <Form onSubmit={this.onSubmit}>
-                        <FormGroup>
-                            <Label for="post"><p>Post</p></Label>
-                            <Input
-                                onChange={(e) => setTitle(e.target.value)}
-                                value={title}
-                                type="text"
-                                name="title"
-                                placeholder="TITLE"
-                            />
-
-                            <Input
-                                onChange={(e) => setBody(e.target.value)}
-                                value={body}
-                                type="text"
-                                name="body"
-                                placeholder="BODY GOES HERE"
-                            />
-                            <Button 
-                                onClick={handleSubmit}>Add Post +</Button>
-                        
-                        </FormGroup>
-                    </Form>
-                </ModalBody>
-                </Modal>
-            </div>
-        )
-    }
-    PostForm.propTypes = {
-        getPostsAgain: func,
-    };
+PostForm.propTypes = {
+    getPostsAgain: func,
+};
 
 export default PostForm;

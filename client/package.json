@@ -12,6 +12,7 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^0.25.0",
     "custom": "^0.0.0",
+    "hash": "^0.2.1",
     "install": "^0.13.0",
     "moment": "^2.29.1",
     "npm": "^8.3.1",
