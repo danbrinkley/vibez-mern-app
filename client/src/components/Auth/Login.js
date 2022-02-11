@@ -4,15 +4,24 @@
 import React from "react";
 import "./login.css";
 import { accessUrl } from "../../spotify";
+import logo from '../../images/logo.png'
+
 
 function Login() {
   return (
-    <div className="login">
+    <div className="login-ctr">
       <img
-        src="https://getheavy.com/wp-content/uploads/2019/12/spotify2019-830x350.jpg"
-        alt=""
+        className="logo"
+        src={logo}
+        alt="logo"
       />
-      <a href={accessUrl}>LOGIN TO SPOTIFY</a>
+
+      <a href ={accessUrl}>
+      <button
+        className="login-btn">
+          <i class="fa fa-spotify"> 
+           LOGIN TO SPOTIFY</i></button>
+      </a>
     </div>
   );
 }
