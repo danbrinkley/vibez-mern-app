@@ -7,7 +7,7 @@ import MainView from '../components/MainView'
 import MainHeader from '../components/MainHeader'
 import Artwork from '../components/ArtWork'
 import SideMenu from '../components/SideMenu'
-import Posts from '../components/Posts'
+import ChatBox from '../components/ChatBox'
 
 
 import PropTypes from 'prop-types';
@@ -158,7 +158,7 @@ render() {
           {/* <TableList /> */}
         </div>
         <div className="right-ctr">
-          <Posts />
+          <ChatBox />
         </div>
       </div>
       <div className="post-ctr">
