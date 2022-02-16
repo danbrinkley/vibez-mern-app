@@ -16,4 +16,5 @@ db.once("open", () => {
 module.exports = {
     User: require("./User"),
     Post: require("./Post"),
+    Note: require("./Note"),
 };
