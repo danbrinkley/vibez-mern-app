@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/vibez-spotify-chat/static/css/main.83ee5702.css",
+    "main.css": "/vibez-spotify-chat/static/css/main.d8afa26f.css",
     "main.js": "/vibez-spotify-chat/static/js/main.d45b2955.js",
     "static/media/EmojiOneColor.woff2": "/vibez-spotify-chat/static/media/EmojiOneColor.90ee5fb894c8d349bc54.woff2",
     "static/media/login-background.png": "/vibez-spotify-chat/static/media/login-background.87e37916f3c3b459ba88.png",
@@ -8,11 +8,11 @@
     "static/media/logo.png": "/vibez-spotify-chat/static/media/logo.f090ac2c2342d156424d.png",
     "static/media/str-chat__connection-error.svg": "/vibez-spotify-chat/static/media/str-chat__connection-error.90385cff548e3b068187c19d5f25e675.svg",
     "index.html": "/vibez-spotify-chat/index.html",
-    "main.83ee5702.css.map": "/vibez-spotify-chat/static/css/main.83ee5702.css.map",
+    "main.d8afa26f.css.map": "/vibez-spotify-chat/static/css/main.d8afa26f.css.map",
     "main.d45b2955.js.map": "/vibez-spotify-chat/static/js/main.d45b2955.js.map"
   },
   "entrypoints": [
-    "static/css/main.83ee5702.css",
+    "static/css/main.d8afa26f.css",
     "static/js/main.d45b2955.js"
   ]
 }
