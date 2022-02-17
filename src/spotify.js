@@ -2,7 +2,7 @@
 export const authEndpoint = "https://accounts.spotify.com/authorize";
 
 const clientId = "9a2df62a8b5e4fe1aedb898f2717a401";
-const redirectUri = "http://localhost:3000/dashboard";
+const redirectUri = "https://warm-meadow-59971.herokuapp.com/dashboard";
 const scopes = [
     "user-read-currently-playing",
     "user-read-playback-state",
