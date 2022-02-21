@@ -54,7 +54,7 @@ class SongList extends Component {
             <i className={`fa ${buttonClass} play-btn`} aria-hidden="true" />
           </div>
 
-          {this.props.viewType !== "songs" && (
+          {/* {this.props.viewType !== "songs" && (
             <p
               className="add-song"
               onClick={() => {
@@ -73,7 +73,7 @@ class SongList extends Component {
             <p className="add-song">
               <i className="fa fa-check" aria-hidden="true" />
             </p>
-          )}
+          )} */}
 
           <div className="song-title">
             <p>{song.track.name}</p>
@@ -87,9 +87,9 @@ class SongList extends Component {
             <p>{song.track.album.name}</p>
           </div>
 
-          <div className="song-added">
+          {/* <div className="song-added">
             <p>{moment(song.added_at).format("YYYY-MM-DD")}</p>
-          </div>
+          </div> */}
 
           <div className="song-length">
             <p>{this.msToMinutesAndSeconds(song.track.duration_ms)}</p>
@@ -112,9 +112,9 @@ class SongList extends Component {
           <div className="song-album-header">
             <p>Album</p>
           </div>
-          <div className="song-added-header">
+          {/* <div className="song-added-header">
             <i className="fa fa-calendar-plus-o" aria-hidden="true" />
-          </div>
+          </div> */}
           <div className="song-length-header">
             <p>
               <i className="fa fa-clock-o" aria-hidden="true" />

@@ -1,6 +1,4 @@
 
-  
-
 import React from "react";
 import "./login.css";
 import { accessUrl } from "../../spotify";
@@ -19,8 +17,8 @@ function Login() {
       <a href ={accessUrl}>
       <button
         className="login-btn">
-          <i class="fa fa-spotify"> 
-           LOGIN TO SPOTIFY</i></button>
+          <i class="fa fa-spotify fa-lg"/> 
+           <span>Login to Spotify</span></button>
       </a>
     </div>
   );

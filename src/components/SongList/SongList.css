@@ -1,5 +1,5 @@
 .section-title {
-  font-size: 24px;
+  font-size: 34px;
   font-weight: 800;
   padding: 0 0 20px 0;
   font-family: 'Proxima Bold', Georgia, sans-serif;
@@ -21,21 +21,20 @@
 
 .user-song-item {
   list-style-type: none;
-  border-bottom: 1px solid #1e1f1fff;
+  border-bottom: 1px solid #666;
   display: flex;
   line-height: 40px;
   font-size: 14px;
   cursor: pointer;
-  padding: 0px;
+  padding-bottom: 10px;
 }
 
 .user-song-item:hover {
-  background: #1e1f1fff;
-  color: #ceeff3ff;
+  background: rgb(51, 51, 51);
 }
 
 .active.user-song-item {
-  color: #f8624fff;
+  color: #1db954;
   background: rgb(51, 51, 51);
 }
 
@@ -50,28 +49,24 @@
 .song-title,
 .song-title-header {
   width: 300px;
-  color: #ceeff3ff;
 }
 
 .song-album,
 .song-album-header {
   width: 250px;
-  color: #ceeff3ff;
 }
 
 .song-artist,
 .song-artist-header {
   width: 200px;
-  color: #ceeff3ff;
 }
 
 .song-added {
   width: 80px;
-  color: #ceeff3ff;
 }
 
 .song-title-header {
-  margin-left: 60px;
+  margin-left: 40px;
 }
 
 .user-song-item .play-song {
@@ -100,9 +95,8 @@
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 0 8px;
+  padding: 0 0px;
   line-height: 42px;
-  color: #ceeff3ff;
 }
 
 .song-length,
@@ -127,20 +121,18 @@
 
 .song-title,
 .song-title-header {
-	width: 180px;
+	width: 250px;
 }
 
 .song-title-header p,
 .song-artist-header p,
 .song-album-header p,
 .song-length-header p {
-  font-family: 'Bevan', cursive;
-font-family: 'Righteous', cursive;
-font-family: 'Space Mono', monospace;
+  font-family: 'Proxima Thin', Georgia, sans-serif;
   text-transform: uppercase;
-  font-size: 14px;
-  color: #ceeff3ff;
-  padding-left: 10px;
+  font-size: 12px;
+  color: #ccc;
+  padding: 0 8px;
 }
 
 .song-length-header .fa-clock-o {
@@ -174,4 +166,3 @@ font-family: 'Space Mono', monospace;
 .add-song .fa:hover {
   -webkit-text-stroke: 2px rgb(24, 24, 24);
 }
-

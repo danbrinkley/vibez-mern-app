@@ -36,9 +36,7 @@ button {
   font-size: 20px;
   background-color: #f8624fff;
   color: #ceeff3ff;
-  font-family: 'Bevan', cursive;
-  font-family: 'Righteous', cursive;
-  font-family: 'Space Mono', monospace;
+  
 }
 .logo {
   width: 400px;
@@ -56,4 +54,9 @@ button {
 .join-link {
   color: #f5cc00ff;
   text-decoration: none;
+}
+span {
+  font-family: 'Gotham', sans-serif;
+  font-size: 20px;
+  margin-left: 5px;
 }
