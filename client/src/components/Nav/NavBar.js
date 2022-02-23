@@ -15,10 +15,10 @@ const NavBar = () => {
         </div>
   
         <div className="logout-ctr">
-          <button className="logout-btn"
+          {/* <button className="logout-btn"
           onClick={() => this.handleLogout()}>
             LOGOUT
-            </button>
+            </button> */}
         </div>
       </div>
 
