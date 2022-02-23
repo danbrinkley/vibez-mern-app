@@ -158,7 +158,7 @@ render() {
           {/* <TableList /> */}
         </div>
         <div className="right-ctr">
-          Chat
+          <ChatBox />
         </div>
       </div>
       <div className="post-ctr">

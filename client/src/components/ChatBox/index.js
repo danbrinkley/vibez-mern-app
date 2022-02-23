@@ -1,36 +1,48 @@
-// import React from 'react';
-// import { StreamChat } from 'stream-chat';
-// import { Chat, Channel, ChannelHeader, MessageInput, MessageInputSmall, VirtualizedMessageList, Window } from 'stream-chat-react';
+import "./chat.css";
+import io from "socket.io-client";
+import { useState } from "react";
+import Chat from "./Chat";
 
-// // import 'stream-chat-react/dist/css/index.css';
+const socket = io.connect("http://localhost:3001");
 
-// const chatClient = StreamChat.getInstance('achdd329h4sq');
-// const userToken = '5pr74vkd4u6mzhexrq7u6v8cys37nv7dqepxhr4vjcstac932xp2s29chv5wqxdr';
+function ChatBox() {
+  const [username, setUsername] = useState("");
+  const [room, setRoom] = useState("");
+  const [showChat, setShowChat] = useState(false);
 
-// chatClient.connectUser(
-//   {
-//     id: 'dbrink',
-//     name: 'rocc24',
-//     image: 'https://getstream.io/random_png/?id=falling-silence-0&name=falling',
-//   },
-//   userToken,
-// );
+  const joinRoom = () => {
+    if (username !== "" && room !== "") {
+      socket.emit("join_room", room);
+      setShowChat(true);
+    }
+  };
 
-// const channel = chatClient.channel('livestream', 'vibez', {
-//   image: 'https://goo.gl/Zefkbx',
-//   name: 'Welcome to Vibez',
-// });
+  return (
+    <div className="ChatBox">
+      {!showChat ? (
+        <div className="joinChatContainer">
+          <p className="joinChatHeader">Join Room</p>
+          <input
+            type="text"
+            placeholder="Daniel..."
+            onChange={(event) => {
+              setUsername(event.target.value);
+            }}
+          />
+          <input
+            type="text"
+            placeholder="Room ID..."
+            onChange={(event) => {
+              setRoom(event.target.value);
+            }}
+          />
+          <button onClick={joinRoom}>Join A Room</button>
+        </div>
+      ) : (
+        <Chat socket={socket} username={username} room={room} />
+      )}
+    </div>
+  );
+}
 
-// const ChatBox = () => (
-//   <Chat client={chatClient} theme='livestream dark'>
-//     <Channel channel={channel}>
-//       <Window>
-//         <ChannelHeader live />
-//         <VirtualizedMessageList />
-//         <MessageInput Input={MessageInputSmall} focus />
-//       </Window>
-//     </Channel>
-//   </Chat>
-// );
-
-// export default ChatBox;
+export default ChatBox;
