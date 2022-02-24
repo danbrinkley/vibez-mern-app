@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import PropTypes from "prop-types";
-import moment from "moment";
 import "./SongList.css";
 
 class SongList extends Component {
