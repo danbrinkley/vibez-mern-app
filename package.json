@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "description": "Vibez Spotify MERN APP",
   "main": "server.js",
+  "engines": {
+    "node": "16.10.0"
+  },
   "scripts": {
     "build": "cd client && npm run build",
         "install-client": "cd client && npm install",
