@@ -2,12 +2,12 @@ import React, { Component } from "react"
 import "./homepage.css";
 import NavBar from "./Nav/NavBar";
 import Player from "./Player";
-import UserPlaylists from "../components/UserPlaylists"
-import MainView from '../components/MainView'
-import MainHeader from '../components/MainHeader'
-import Artwork from '../components/ArtWork'
-import SideMenu from '../components/SideMenu'
-import ChatBox from '../components/ChatBox'
+import UserPlaylists from "./UserPlaylists"
+import MainView from './MainView'
+import MainHeader from './MainHeader'
+import Artwork from './ArtWork'
+import SideMenu from './SideMenu'
+import ChatBox from './ChatBox'
 
 
 import PropTypes from 'prop-types';
